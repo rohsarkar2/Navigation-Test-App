@@ -15,6 +15,23 @@ export type RootStackParamList = {
   HomeTab: NavigatorScreenParams<BottomTabParamList>;
   SignIn: undefined;
   SignUp: undefined;
-  Orders: undefined;
-  Account: undefined;
 };
+
+export type SignInScreenProps = StackScreenProps<RootStackParamList, 'SignIn'>;
+
+export type SignUpScreenProps = StackScreenProps<RootStackParamList, 'SignUp'>;
+
+export type HomeScreenProps = CompositeScreenProps<
+  BottomTabScreenProps<BottomTabParamList, 'Home'>,
+  StackScreenProps<RootStackParamList>
+>;
+
+export type OrdersScreenProps = CompositeScreenProps<
+  BottomTabScreenProps<BottomTabParamList, 'Orders'>,
+  StackScreenProps<RootStackParamList>
+>;
+
+export type AccountScreenProps = CompositeScreenProps<
+  BottomTabScreenProps<BottomTabParamList, 'Account'>,
+  StackScreenProps<RootStackParamList>
+>;
